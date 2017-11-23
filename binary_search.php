@@ -1,26 +1,30 @@
 <?php
 
-function binary($numbers, $value)
+function binarySearch($numbers, $value) 
 {
 	$min = 0;
-	$max = count($numbers) -1;
-	$result = false;
-
-	while ($min < $max) {
-		$mid = $max + ($min - $max) / 2;
-
-		if ($numbers[$mid] < $value) {
-			$min = $mid + 1;
-		} elseif ($numbers[$mid] > $value) {
+	$max = count($numbers)-1;
+ 	sort($numbers);
+ 	
+	while ($min <= $max) {
+		$mid = ($min + $max) >> 1;
+ 
+		if ($numbers[$mid] > $value) {
 			$max = $mid - 1;
-		} else {
-			$result = true;
+		} elseif ($numbers[$mid] < $value) {
+			$min = $mid + 1;
+		} else{
 			return "$value found";
 		}
 	}
-
-	if (!$result) 
-		return "$value not found";
+ 
+	return "$value not found";
 }
 
-echo binary([1, 2, 3, 4, 6, 7, 8, 9], 2);
+$nums = [];
+
+for ($i=0; $i <= 100 ; $i++) { 
+	$nums[] = $i;
+}
+
+echo binarySearch($nums, 68). "<br>";
