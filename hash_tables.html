@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h3 id="write"></h3>
+	<script type="">
+		
+
+		const first = ['a', 'b', 'c', 'x'];
+		const second = ['z', 'y', 'x'];
+
+		function check(first, second) {
+			var hashTable = {};
+
+			for (var i = 0; i < first.length; i++) {
+				if (!hashTable[first[i]]) {
+					hashTable[first[i]] = true;
+
+				}
+			}
+			for (var x = 0; x < second.length; x++) {
+				if (hashTable[second[x]]) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+
+		document.getElementById('write').innerHTML  = check(first, second);
+	</script>
+</body>
+</html>
