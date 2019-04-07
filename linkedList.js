@@ -1,4 +1,3 @@
-
 class Linkedlist {
 
 	constructor(value) {
@@ -10,7 +9,7 @@ class Linkedlist {
 	    this.length = 1;
   	}
 
-		append(value) {
+	append(value) {
 	    const newNode = {
 	        value: value,
 	        next:null
@@ -38,14 +37,13 @@ class Linkedlist {
 		  array.push(currentNode.value)
 		  currentNode = currentNode.next
 		}
-			return array;
+		return array;
 	}
 
 	insert(index, value) {
 		if(index >= this.length) {
 		    return this.append(value);
 		}
-
 		const newNode = {
 		    value: value,
 		    next:null
@@ -61,8 +59,8 @@ class Linkedlist {
 		let counter = 0;
 		let currentNode = this.head;
 		while(counter != index) {
-		currentNode = currentNode.next;
-		counter++
+			currentNode = currentNode.next;
+			counter++
 		}
 		return currentNode;
 	}
@@ -71,7 +69,7 @@ class Linkedlist {
         const leader = this.traverseToIndex(index -1);
         const removedNode = leader.next;
         leader.next = removedNode.next;
-        this.length--
+        this.length--;
         return this.printList();
     }
 
@@ -108,4 +106,4 @@ mylinkedlist.prepend(1);
 // mylinkedlist.remove(3);
 mylinkedlist.reverse();
 
-		
+	
